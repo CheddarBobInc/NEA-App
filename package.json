@@ -1,0 +1,25 @@
+{
+  "name": "nea-app",
+  "version": "1.0.0",
+  "description": "Circuit Builder",
+  "main": "main.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CheddarBobInc/NEA-App.git"
+  },
+  "author": "Callum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CheddarBobInc/NEA-App/issues"
+  },
+  "homepage": "https://github.com/CheddarBobInc/NEA-App#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jasmine": "^4.5.0"
+  }
+}
