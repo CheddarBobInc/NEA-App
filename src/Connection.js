@@ -4,14 +4,13 @@ const {
   DEFAULT_POTENTIALDIFFERENCE,
 } = require("../src/properties");
 
-
-
-class Component {
+class Connection {
   constructor(
     current = DEFAULT_CURRENT,
     resistance = DEFAULT_RESISTANCE,
     potentialDifference = DEFAULT_POTENTIALDIFFERENCE
   ) {
+    this.isConnected = false;
     this.current = current;
     this.resistance = resistance;
     this.potentialDifference = potentialDifference;
@@ -19,5 +18,5 @@ class Component {
 }
 
 module.exports = {
-  Component: Component,
+  Connection: Connection,
 };

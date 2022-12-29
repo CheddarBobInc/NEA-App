@@ -1,23 +1,26 @@
-const { Component, DEFAULT_CURRENT } = require('../src/Component');
+const { Component } = require("../src/Component");
+const {
+  DEFAULT_CURRENT,
+  DEFAULT_RESISTANCE,
+  DEFAULT_POTENTIALDIFFERENCE,
+} = require("../src/properties");
 
 describe("Component", () => {
   let component;
-
-
-
 
   beforeEach(() => {
     component = new Component();
   });
 
-  it('has a default current of zero', () => {
+  it("has a default current of zero", () => {
     expect(component.current).toEqual(DEFAULT_CURRENT);
-  })
+  });
 
-  it('the current can be set to specified value', () => {
-    component = new Component(20);
-    expect(component.current).toEqual(20);
-  })
+  it("has a default resistance of zero", () => {
+    expect(component.resistance).toEqual(DEFAULT_RESISTANCE);
+  });
 
-
+  it("has a default potential difference of zero", () => {
+    expect(component.potentialDifference).toEqual(DEFAULT_POTENTIALDIFFERENCE);
+  });
 });
