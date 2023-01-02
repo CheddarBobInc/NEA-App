@@ -1,0 +1,9 @@
+connections have polarity done
+connections on wires to be polarised this will be inherited to batteries done
+circuit class to be created
+circuit class should take in components
+instantiate connectors
+builds the circuit by matching connections on connectors
+negative connections should inherit positive connections properties
+isloop bool for when all isconnected connections true
+simulates in real time connections interacting being influenced by components

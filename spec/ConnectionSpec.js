@@ -28,4 +28,7 @@ describe("Connection", () => {
     expect(connection.potentialDifference).toEqual(DEFAULT_POTENTIALDIFFERENCE);
   });
 
+  it("has a bool is positive", () => {
+    expect(connection.isPositive).toBeUndefined();
+  });
 });

@@ -1,7 +1,24 @@
-const Component = require("./Component");
+const {
+  DEFAULT_CURRENT,
+  DEFAULT_RESISTANCE,
+  DEFAULT_POTENTIALDIFFERENCE,
+} = require("./properties");
+const { Connection } = require("../src/Connection");
 
-class Wire extends Component {
-    constructor() {
-        super.constructor()
-    }
+class Wire {
+  constructor(
+    current = DEFAULT_CURRENT,
+    resistance = DEFAULT_RESISTANCE,
+    potentialDifference = DEFAULT_POTENTIALDIFFERENCE
+  ) {
+    this.current = current;
+    this.resistance = resistance;
+    this.potentialDifference = potentialDifference;
+    this.positiveConnection = new Connection(true);
+    this.negativeConnection = new Connection(false);
+  }
 }
+
+module.exports = {
+  Wire: Wire,
+};
