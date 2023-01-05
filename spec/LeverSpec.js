@@ -1,3 +1,4 @@
+// import necessary files
 const { Lever } = require("../src/Lever");
 const { Connection } = require("../src/Connection");
 const {
@@ -7,12 +8,14 @@ const {
 } = require("../src/properties");
 
 describe("Lever", () => {
+  // initialises lever objects before each test
   let lever;
 
   beforeEach(() => {
     lever = new Lever();
   });
 
+  // tests default values have been set correctly
   it("has a default current of zero", () => {
     expect(lever.current).toEqual(DEFAULT_CURRENT);
   });
@@ -36,5 +39,16 @@ describe("Lever", () => {
 
   it("has a negative connection with ispositive bool equal to false", () => {
     expect(lever.negativeConnection.isPositive).toEqual(false);
+  });
+
+  // tests that lever functionality works
+  it("has a boolean isOn with default of false", () => {
+    expect(lever.isOn).toEqual(false);
+  });
+
+  it("has a method onClick which swtiches the lever isOn bool", () => {
+    let initialValue = lever.isOn;
+    lever.onClick();
+    expect(lever.isOn).toEqual(!initialValue);
   });
 });
