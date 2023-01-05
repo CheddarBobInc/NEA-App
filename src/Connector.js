@@ -1,3 +1,4 @@
+// import necessary files
 const { Connection } = require("../src/Connection");
 
 class Connector {
@@ -9,6 +10,7 @@ class Connector {
   }
 }
 
+// exporting connector class
 module.exports = {
   Connector: Connector,
 };

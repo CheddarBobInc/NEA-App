@@ -1,3 +1,4 @@
+// import necessary files
 const { Connection } = require("../src/Connection");
 const {
   DEFAULT_CURRENT,
@@ -6,12 +7,14 @@ const {
 } = require("../src/properties");
 
 describe("Connection", () => {
+  // initialises connection objects before each test
   let connection;
 
   beforeEach(() => {
     connection = new Connection();
   });
 
+  // tests default values have been set correctly
   it("has a bool is connected", () => {
     expect(connection.isConnected).toEqual(false);
   });

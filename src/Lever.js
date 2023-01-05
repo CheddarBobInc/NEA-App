@@ -1,4 +1,4 @@
-// importing files
+// import necessary files
 const { Wire } = require("./Wire");
 const {
   DEFAULT_CURRENT,
@@ -25,7 +25,7 @@ class Lever extends Wire {
   }
 }
 
-// exporting files
+// exporting lever class
 module.exports = {
   Lever: Lever,
 };

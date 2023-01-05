@@ -1,3 +1,4 @@
+// import necessary files
 const {
   DEFAULT_CURRENT,
   DEFAULT_RESISTANCE,
@@ -19,6 +20,7 @@ class Wire {
   }
 }
 
+// exporting wire class
 module.exports = {
   Wire: Wire,
 };

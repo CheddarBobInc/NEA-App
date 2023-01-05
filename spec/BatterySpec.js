@@ -1,3 +1,4 @@
+// import necessary files
 const { Battery } = require("../src/Battery");
 const { Connection } = require("../src/Connection");
 const {
@@ -7,12 +8,14 @@ const {
 } = require("../src/properties");
 
 describe("Battery", () => {
+  // initialises battery objects before each test
   let battery;
 
   beforeEach(() => {
     battery = new Battery();
   });
 
+  // tests default values have been set correctly
   it("has a default current of zero", () => {
     expect(battery.current).toEqual(DEFAULT_CURRENT);
   });

@@ -1,3 +1,4 @@
+// import necessary files
 const { Wire } = require("../src/Wire");
 const { Connection } = require("../src/Connection");
 const {
@@ -7,12 +8,14 @@ const {
 } = require("../src/properties");
 
 describe("Wire", () => {
+  // initialises connection objects before each test
   let wire;
 
   beforeEach(() => {
     wire = new Wire();
   });
 
+  // tests default values have been set correctly
   it("has a default current of zero", () => {
     expect(wire.current).toEqual(DEFAULT_CURRENT);
   });

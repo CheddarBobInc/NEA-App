@@ -10,6 +10,7 @@ class Circuit {
     }
 }
 
+// exporting circuit class
 module.exports = {
     Circuit: Circuit,
   };

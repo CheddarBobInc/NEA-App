@@ -1,3 +1,4 @@
+// import necessary files
 const {
   DEFAULT_CURRENT,
   DEFAULT_RESISTANCE,
@@ -12,13 +13,14 @@ class Connection {
     potentialDifference = DEFAULT_POTENTIALDIFFERENCE
   ) {
     this.isConnected = false;
-    this.isPositive = isPositive;
+    this.isPositive = isPositive; // represents connections polarity
     this.current = current;
     this.resistance = resistance;
     this.potentialDifference = potentialDifference;
   }
 }
 
+// exporting connection class
 module.exports = {
   Connection: Connection,
 };

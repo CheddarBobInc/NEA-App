@@ -1,8 +1,11 @@
+// default values for circuit components
+
 const DEFAULT_CURRENT = 0;
 const DEFAULT_RESISTANCE = 0;
 const DEFAULT_POTENTIALDIFFERENCE = 0;
 const DEFAULT_BATTERY_POTENTIALDIFFERENCE = 5;
 
+// exporting default values
 module.exports = {
   DEFAULT_CURRENT,
   DEFAULT_RESISTANCE,
