@@ -10,8 +10,8 @@ class Circuit {
   constructor(numOfConnectors = 4, components = []) {
     this.numOfConnectors = numOfConnectors;
     this.components = components;
-    this.hasMinimumConnections = this.connections.length > 4 ? true : false;
-    this.hasMinimumComponents = this.components.length > 2 ? true : false;
+    // this.hasMinimumConnections = this.connections.length > 4 ? true : false;
+    // this.hasMinimumComponents = this.components.length > 2 ? true : false;
     this.isComplete = false;
     this.hasMinimumConnections && this.hasMinimumComponents ? true : false;
     this.connectors = [];
