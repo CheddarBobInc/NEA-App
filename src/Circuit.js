@@ -7,21 +7,25 @@ const { Connector } = require("./Connector");
 let components = [];
 
 class Circuit {
-  constructor(numOfConnectors = 4, components = []) {
+  constructor(numOfConnectors = 2, components = []) {
     this.numOfConnectors = numOfConnectors;
     this.components = components;
     // this.hasMinimumConnections = this.connections.length > 4 ? true : false;
     // this.hasMinimumComponents = this.components.length > 2 ? true : false;
     this.isComplete = false;
     this.hasMinimumConnections && this.hasMinimumComponents ? true : false;
-    this.connectors = [];
+    this.connectors = {};
   }
 
-  initialiseCircuit(numOfConnectors) {
+  initialiseCircuit(num = this.numOfConnectors) {
     // creates connectors
-    for (let i = 0; i < numOfConnectors; i++) {
-      connectors[i] = new Connector();
+    for (let i = 0; i < num; i++) {
+      for (let j = 0; j < num; j++) {
+        this.connectors[`connector${j}${i}`] = new Connector(j, i);
+      }
     }
+
+    console.log(this.connectors);
 
     // gives connectors connections there coordinates
     // for (let i = 0; i < connectors.length; i++) {

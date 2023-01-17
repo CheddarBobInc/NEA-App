@@ -18,8 +18,6 @@ describe("Circuit", () => {
 
     it("has 4 connectors", () => {
         circuit.initialiseCircuit();
-        circuitConnectors = circuit.connectors;
-        numOfConnectors = circuitConnectors.length;
-        expect(numOfConnectors).toEqual(4);
+        expect(Object.keys(circuit.connectors).length).toEqual(4);
     })
 });
