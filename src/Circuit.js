@@ -7,8 +7,8 @@ const { Connector } = require("./Connector");
 let components = [];
 
 class Circuit {
-  constructor(numOfConnectors = 2, components = []) {
-    this.numOfConnectors = numOfConnectors;
+  constructor(circuitSize = 2, components = []) {
+    this.circuitSize = circuitSize; // length of side of circuit square (connectors setup in a square)
     this.components = components;
     // this.hasMinimumConnections = this.connections.length > 4 ? true : false;
     // this.hasMinimumComponents = this.components.length > 2 ? true : false;
@@ -17,20 +17,23 @@ class Circuit {
     this.connectors = {};
   }
 
-  initialiseCircuit(num = this.numOfConnectors) {
-    // creates connectors
-    for (let i = 0; i < num; i++) {
-      for (let j = 0; j < num; j++) {
-        this.connectors[`connector${j}${i}`] = new Connector(j, i);
+  initialiseCircuit(num = this.circuitSize) {
+    // creates connectors based on the circuit size
+    for (let y = 0; y < num; y++) {
+      for (let x = 0; x < num; x++) {
+        this.connectors[`connector${x}${y}`] = new Connector(x, y);
       }
     }
 
-    console.log(this.connectors);
-
-    // gives connectors connections there coordinates
-    // for (let i = 0; i < connectors.length; i++) {
-    //   connectors[i].up
-    // }
+    // gives connectors connections there directions
+    for (let y = 0; y < num; y++) {
+      for (let x = 0; x < num; x++) {
+        this.connectors[`connector${x}${y}`].up.direction = 0;
+        this.connectors[`connector${x}${y}`].right.direction = 1;
+        this.connectors[`connector${x}${y}`].down.direction = 2;
+        this.connectors[`connector${x}${y}`].left.direction = 3;
+      }
+    }
   }
 }
 

@@ -8,14 +8,14 @@ const {
 class Connection {
   constructor(
     isPositive,
-    coordinate,
+    direction,
     current = DEFAULT_CURRENT,
     resistance = DEFAULT_RESISTANCE,
     potentialDifference = DEFAULT_POTENTIALDIFFERENCE
   ) {
     this.isConnected = false;
     this.isPositive = isPositive; // represents connections polarity
-    this.coordinate = coordinate;
+    this.direction = direction;
     this.current = current;
     this.resistance = resistance;
     this.potentialDifference = potentialDifference;

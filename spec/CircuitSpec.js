@@ -20,4 +20,12 @@ describe("Circuit", () => {
         circuit.initialiseCircuit();
         expect(Object.keys(circuit.connectors).length).toEqual(4);
     })
+
+    it("connectors have direction", () => {
+      circuit.initialiseCircuit();
+      expect(circuit.connectors[`connector00`].up.direction).toEqual(0);
+      expect(circuit.connectors[`connector00`].right.direction).toEqual(1);
+      expect(circuit.connectors[`connector00`].down.direction).toEqual(2);
+      expect(circuit.connectors[`connector00`].left.direction).toEqual(3);
+    })
 });
