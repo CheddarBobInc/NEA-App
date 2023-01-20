@@ -7,7 +7,7 @@ const { Connector } = require("./Connector");
 let components = [];
 
 class Circuit {
-  constructor(circuitSize = 2, components = []) {
+  constructor(circuitSize = 2, components = {}) {
     this.circuitSize = circuitSize; // length of side of circuit square (connectors setup in a square)
     this.components = components;
     // this.hasMinimumConnections = this.connections.length > 4 ? true : false;
@@ -34,6 +34,9 @@ class Circuit {
         this.connectors[`connector${x}${y}`].left.direction = 3;
       }
     }
+
+    // initialising default battery in circuit
+    this.components["battery"] = new Battery();
   }
 }
 

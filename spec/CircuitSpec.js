@@ -10,22 +10,32 @@ const {
 } = require("../src/properties");
 
 describe("Circuit", () => {
-    let circuit;
-  
-    beforeEach(() => {
-      circuit = new Circuit();
-    });
+  let circuit;
 
-    it("has 4 connectors", () => {
-        circuit.initialiseCircuit();
-        expect(Object.keys(circuit.connectors).length).toEqual(4);
-    })
+  beforeEach(() => {
+    circuit = new Circuit();
+  });
 
-    it("connectors have direction", () => {
-      circuit.initialiseCircuit();
-      expect(circuit.connectors[`connector00`].up.direction).toEqual(0);
-      expect(circuit.connectors[`connector00`].right.direction).toEqual(1);
-      expect(circuit.connectors[`connector00`].down.direction).toEqual(2);
-      expect(circuit.connectors[`connector00`].left.direction).toEqual(3);
-    })
+  it("has 4 connectors", () => {
+    circuit.initialiseCircuit();
+    expect(Object.keys(circuit.connectors).length).toEqual(4);
+  });
+
+  it("connectors have direction", () => {
+    circuit.initialiseCircuit();
+    expect(circuit.connectors[`connector00`].up.direction).toEqual(0);
+    expect(circuit.connectors[`connector00`].right.direction).toEqual(1);
+    expect(circuit.connectors[`connector00`].down.direction).toEqual(2);
+    expect(circuit.connectors[`connector00`].left.direction).toEqual(3);
+  });
+
+  it("has a battery", () => {
+    circuit.initialiseCircuit();
+    expect(circuit.components["battery"]).toBeInstanceOf(Battery);
+  });
+
+  it("has a battery which is connected", () => {
+    circuit.initialiseCircuit();
+    expect(circuit.components["battery"]).toBeInstanceOf(Battery);
+  });
 });
