@@ -15,8 +15,8 @@ class Wire {
     this.current = current;
     this.resistance = resistance;
     this.potentialDifference = potentialDifference;
-    this.positiveConnection = new Connection(true);
-    this.negativeConnection = new Connection(false);
+    this.parentComponent;
+    this.childComponents = {};
   }
 }
 

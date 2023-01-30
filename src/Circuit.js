@@ -16,23 +16,6 @@ class Circuit {
   }
 
   initialiseCircuit(num = this.circuitSize) {
-    // creates connectors based on the circuit size
-    for (let y = 0; y < num; y++) {
-      for (let x = 0; x < num; x++) {
-        this.connectors[`connector${x}${y}`] = new Connector(x, y);
-      }
-    }
-
-    // gives connectors connections there directions
-    for (let y = 0; y < num; y++) {
-      for (let x = 0; x < num; x++) {
-        this.connectors[`connector${x}${y}`].up.direction = 0;
-        this.connectors[`connector${x}${y}`].right.direction = 1;
-        this.connectors[`connector${x}${y}`].down.direction = 2;
-        this.connectors[`connector${x}${y}`].left.direction = 3;
-      }
-    }
-
     // initialising default battery in circuit
     this.components["battery"] = new Battery();
   }
