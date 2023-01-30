@@ -4,8 +4,6 @@ const { Battery } = require("./Battery");
 const { Connection } = require("./Connection");
 const { Connector } = require("./Connector");
 
-let components = [];
-
 class Circuit {
   constructor(circuitSize = 2, components = {}) {
     this.circuitSize = circuitSize; // length of side of circuit square (connectors setup in a square)
