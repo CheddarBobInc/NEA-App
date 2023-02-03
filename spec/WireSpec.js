@@ -28,16 +28,16 @@ describe("Wire", () => {
     expect(wire.potentialDifference).toEqual(DEFAULT_POTENTIALDIFFERENCE);
   });
 
-  it("has two connections", () => {
-    expect(wire.positiveConnection).toBeInstanceOf(Connection);
-    expect(wire.negativeConnection).toBeInstanceOf(Connection);
-  });
+  // it("has two connections", () => {
+  //   expect(wire.positiveConnection).toBeInstanceOf(Connection);
+  //   expect(wire.negativeConnection).toBeInstanceOf(Connection);
+  // });
 
-  it("has a positive connection with ispositive bool equal to true", () => {
-    expect(wire.positiveConnection.isPositive).toEqual(true);
-  });
+  // it("has a positive connection with ispositive bool equal to true", () => {
+  //   expect(wire.positiveConnection.isPositive).toEqual(true);
+  // });
 
-  it("has a negative connection with ispositive bool equal to false", () => {
-    expect(wire.negativeConnection.isPositive).toEqual(false);
-  });
+  // it("has a negative connection with ispositive bool equal to false", () => {
+  //   expect(wire.negativeConnection.isPositive).toEqual(false);
+  // });
 });

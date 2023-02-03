@@ -6,7 +6,7 @@ const { Connector } = require("./Connector");
 
 class Circuit {
   constructor() {
-    this.components = 
+    this.components = 0;
   }
 
   initialiseCircuit(num = this.circuitSize) {

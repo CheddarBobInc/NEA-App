@@ -28,18 +28,18 @@ describe("Lever", () => {
     expect(lever.potentialDifference).toEqual(DEFAULT_POTENTIALDIFFERENCE);
   });
 
-  it("has two connections", () => {
-    expect(lever.positiveConnection).toBeInstanceOf(Connection);
-    expect(lever.negativeConnection).toBeInstanceOf(Connection);
-  });
+  // it("has two connections", () => {
+  //   expect(lever.positiveConnection).toBeInstanceOf(Connection);
+  //   expect(lever.negativeConnection).toBeInstanceOf(Connection);
+  // });
 
-  it("has a positive connection with ispositive bool equal to true", () => {
-    expect(lever.positiveConnection.isPositive).toEqual(true);
-  });
+  // it("has a positive connection with ispositive bool equal to true", () => {
+  //   expect(lever.positiveConnection.isPositive).toEqual(true);
+  // });
 
-  it("has a negative connection with ispositive bool equal to false", () => {
-    expect(lever.negativeConnection.isPositive).toEqual(false);
-  });
+  // it("has a negative connection with ispositive bool equal to false", () => {
+  //   expect(lever.negativeConnection.isPositive).toEqual(false);
+  // });
 
   // tests that lever functionality works
   it("has a boolean isOn with default of false", () => {

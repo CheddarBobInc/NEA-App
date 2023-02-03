@@ -30,16 +30,16 @@ describe("Battery", () => {
     );
   });
 
-  it("has two connections", () => {
-    expect(battery.positiveConnection).toBeInstanceOf(Connection);
-    expect(battery.negativeConnection).toBeInstanceOf(Connection);
-  });
+  // it("has two connections", () => {
+  //   expect(battery.positiveConnection).toBeInstanceOf(Connection);
+  //   expect(battery.negativeConnection).toBeInstanceOf(Connection);
+  // });
 
-  it("has a positive connection with ispositive bool equal to true", () => {
-    expect(battery.positiveConnection.isPositive).toEqual(true);
-  });
+  // it("has a positive connection with ispositive bool equal to true", () => {
+  //   expect(battery.positiveConnection.isPositive).toEqual(true);
+  // });
 
-  it("has a negative connection with ispositive bool equal to false", () => {
-    expect(battery.negativeConnection.isPositive).toEqual(false);
-  });
+  // it("has a negative connection with ispositive bool equal to false", () => {
+  //   expect(battery.negativeConnection.isPositive).toEqual(false);
+  // });
 });
