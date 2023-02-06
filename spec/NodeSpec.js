@@ -1,12 +1,12 @@
 // import necessary files
-const { LinkedListNode } = require("../src/LinkedListNode");
+const { Node } = require("../src/Node");
 
-describe("LinkedListNode", () => {
+describe("Node", () => {
   // initialises connection objects before each test
   let linkedListNode;
 
   beforeEach(() => {
-    linkedListNode = new LinkedListNode();
+    linkedListNode = new Node();
   });
 
   it("has data", () => {

@@ -15,8 +15,6 @@ class Wire {
     this.current = current;
     this.resistance = resistance;
     this.potentialDifference = potentialDifference;
-    this.parentComponent;
-    this.childComponents = {};
   }
 }
 

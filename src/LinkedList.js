@@ -1,4 +1,4 @@
-const { LinkedListNode } = require("./LinkedListNode");
+const { Node } = require("./Node");
 
 class LinkedList {
   constructor() {
@@ -8,13 +8,13 @@ class LinkedList {
 
   // insert first node
   insertFirst(data) {
-    this.head = new LinkedListNode(data, this.head);
+    this.head = new Node(data, this.head);
     this.length++;
   }
 
   // insert last node
   insertLast(data) {
-    const node = new LinkedListNode(data);
+    const node = new Node(data);
 
     if (!this.head) {
       this.head = node;
@@ -40,9 +40,9 @@ class LinkedList {
 
     // if first index
     if (index === 0) {
-      this.head = new LinkedListNode(data, this.head);
+      this.head = new Node(data, this.head);
     } else {
-      const node = new LinkedListNode(data);
+      const node = new Node(data);
       let current, previous;
 
       // set current to first
