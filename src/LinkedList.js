@@ -19,46 +19,46 @@ class LinkedList {
     if (!this.head) {
       this.head = node;
     } else {
-        let index = this.head;
+      let index = this.head;
 
-        while (index.next) {
-            index = index.next;
-        }
+      while (index.next) {
+        index = index.next;
+      }
 
-        index.next = node;
+      index.next = node;
     }
 
-    this.length++
+    this.length++;
   }
 
   // insert at index
   insertAt(data, index) {
     // if index is out of range
-    if (index > 0 && index > this.length) {
-        return;
+    if (index > 0 && index >= this.length) {
+      return;
     }
 
     // if first index
     if (index === 0) {
-        insertFirst(data);
-    }
+      this.head = new LinkedListNode(data, this.head);
+    } else {
+      const node = new LinkedListNode(data);
+      let current, previous;
 
-    const node = new LinkedListNode(data);
-    let current, previous;
+      // set current to first
+      current = this.head;
+      let count = 0;
 
-    // set current to first
-    current = this.head;
-    let count = 0;
-
-    while (count < index) {
+      while (count < index) {
         previous = current; // node before index
         count++;
         current = current.next; // node after index
+      }
+
+      node.next = current;
+      previous.next = node;
     }
 
-    node.next = current;
-    previous.next = node;
-    
     this.length++;
   }
 
@@ -68,12 +68,12 @@ class LinkedList {
     let count = 0;
 
     while (current) {
-        if (count == index) {
-            return current.data;
-        }
+      if (count == index) {
+        return current.data;
+      }
 
-        count++;
-        current = current.next;
+      count++;
+      current = current.next;
     }
 
     return null;
@@ -82,8 +82,8 @@ class LinkedList {
   // remove at index
   removeAt(index) {
     // if index is out of range
-    if (index > 0 && index > this.length) {
-        return;
+    if (index > 0 && index >= this.length) {
+      return;
     }
 
     let current = this.head;
@@ -92,17 +92,17 @@ class LinkedList {
 
     // remove first
     if (index === 0) {
-        this.head = current.next;
+      this.head = current.next;
     } else {
-        while (count < index) {
-            count++;
-            previous = current;
-            current = current.next;
-        }
+      while (count < index) {
+        count++;
+        previous = current;
+        current = current.next;
+      }
 
-        previous.next = current.next;
+      previous.next = current.next;
     }
-    
+
     this.length--;
   }
 
@@ -113,7 +113,7 @@ class LinkedList {
   }
 
   // print list data
-  printLinkedList() {
+  print() {
     let index = this.head;
 
     while (index) {
@@ -124,5 +124,5 @@ class LinkedList {
 }
 
 module.exports = {
-    LinkedList: LinkedList,
-  };
+  LinkedList: LinkedList,
+};
