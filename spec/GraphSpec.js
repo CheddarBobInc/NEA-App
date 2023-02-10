@@ -56,8 +56,22 @@ describe("Graph", () => {
     graph.addEdge(1, 2);
     graph.addEdge(1, 3);
 
-    // console.log(graph.verticies.getAt(0));
-    // console.log(graph.verticies.getAt(1));
-    // expect(graph.verticies.getAt(0).listOfConnections.getAt(0)).toEqual(1);
+    expect(graph.verticies.getAt(0).listOfConnections.getAt(0)).toEqual(1);
+    expect(graph.verticies.getAt(0).listOfConnections.getAt(1)).toEqual(2);
+    expect(graph.verticies.getAt(1).listOfConnections.getAt(0)).toEqual(2);
+    expect(graph.verticies.getAt(1).listOfConnections.getAt(1)).toEqual(null);
+  });
+
+  it("has method addEdge that adds edge between two verticies", () => {
+    graph.addVertex(new Wire());
+    graph.addVertex(new Battery());
+    graph.addVertex(new Lever());
+
+    graph.addEdge(0, 1);
+    graph.addEdge(0, 2);
+    graph.addEdge(1, 2);
+    graph.addEdge(1, 3);
+
+    graph.removeEdge(0, 2);
   });
 });

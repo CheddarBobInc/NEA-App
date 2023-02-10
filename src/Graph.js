@@ -16,8 +16,10 @@ class Graph {
     // add edge
     addEdge(vertex1, vertex2) {
         // check that vertcies exist
-        if (this.verticies.getAt(vertex1)) {
-            console.log(this.verticies.getAt(vertex1));
+        if (!this.verticies.getAt(vertex1)) {
+            return;
+        }
+        if (!this.verticies.getAt(vertex2)) {
             return;
         }
 
@@ -27,6 +29,13 @@ class Graph {
     // remove vertex
 
     // remove edge
+    removeEdge(vertex1, vertex2) {
+        // check if edge exists
+        console.log(this.verticies.getAt(vertex1).listOfConnections.getAt(vertex2));
+        if (this.verticies.getAt(vertex1).listOfConnections.getAt(vertex2)) {
+            console.log(this.verticies.getAt(vertex1).listOfConnections.getAt(vertex2));
+        }
+    }
 
     // print graph
     print() {
