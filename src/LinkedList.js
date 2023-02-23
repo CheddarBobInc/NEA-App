@@ -112,6 +112,26 @@ class LinkedList {
     this.length = 0;
   }
 
+  // linear search
+  search(target) {
+    let found = false;
+    let current = this.head;
+    let count = 0;
+    while (!found || count <= length) {
+      if (current.data = target) {
+        found = true;
+      }
+      current = current.next;
+      count++;
+    }
+
+    if (found) {
+      return current;
+    } else {
+      return;
+    }
+  }
+
   // print list data
   print() {
     let index = this.head;
