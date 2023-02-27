@@ -76,7 +76,7 @@ class LinkedList {
       current = current.next;
     }
 
-    return null;
+    return;
   }
 
   // remove at index
@@ -106,6 +106,20 @@ class LinkedList {
     this.length--;
   }
 
+  // remove
+  remove(target) {
+    let current = this.head;
+    let count = 0;
+
+    while (current) {
+      if (current.data === target) {
+        this.removeAt(count);
+      }
+      count++;
+      current = current.next;
+    }
+  }
+
   // clear list
   clearList() {
     this.head = null;
@@ -114,22 +128,17 @@ class LinkedList {
 
   // linear search
   search(target) {
-    let found = false;
     let current = this.head;
-    let count = 0;
-    while (!found || count <= length) {
-      if (current.data = target) {
-        found = true;
+
+    while (current) {
+      if (current.data === target) {
+        return current.data;
       }
+
       current = current.next;
-      count++;
     }
 
-    if (found) {
-      return current;
-    } else {
-      return;
-    }
+    return;
   }
 
   // print list data

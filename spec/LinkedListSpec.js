@@ -56,7 +56,7 @@ describe("LinkedList", () => {
     linkedList.insertLast(3);
 
     // testing for when index out of range
-    expect(linkedList.getAt(10)).toEqual(null);
+    expect(linkedList.getAt(10)).toEqual(undefined);
 
     expect(linkedList.getAt(2)).toEqual(2);
   });
@@ -108,5 +108,24 @@ describe("LinkedList", () => {
     expect(linkedList.length).toEqual(3);
     linkedList.removeAt(0);
     expect(linkedList.length).toEqual(2);
+  });
+
+  it("has method search that returns the target if found", () => {
+    linkedList.insertLast(2);
+    linkedList.insertLast(3);
+    linkedList.insertLast(4);
+    linkedList.insertLast(5);
+    expect(linkedList.search(4)).toEqual(4);
+    expect(linkedList.search(6)).toEqual(undefined);
+  });
+
+  it("has method remove that removes a target node", () => {
+    linkedList.insertLast(2);
+    linkedList.insertLast(3);
+    linkedList.insertLast(4);
+    linkedList.insertLast(5);
+    expect(linkedList.search(4)).toEqual(4);
+    linkedList.remove(4);
+    expect(linkedList.search(4)).toEqual(undefined);
   });
 });

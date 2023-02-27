@@ -59,10 +59,10 @@ describe("Graph", () => {
     expect(graph.verticies.getAt(0).listOfConnections.getAt(0)).toEqual(1);
     expect(graph.verticies.getAt(0).listOfConnections.getAt(1)).toEqual(2);
     expect(graph.verticies.getAt(1).listOfConnections.getAt(0)).toEqual(2);
-    expect(graph.verticies.getAt(1).listOfConnections.getAt(1)).toEqual(null);
+    expect(graph.verticies.getAt(1).listOfConnections.getAt(1)).toEqual(undefined);
   });
 
-  it("has method addEdge that adds edge between two verticies", () => {
+  it("has method removeEdge that removes an edge between two verticies", () => {
     graph.addVertex(new Wire());
     graph.addVertex(new Battery());
     graph.addVertex(new Lever());
@@ -72,6 +72,30 @@ describe("Graph", () => {
     graph.addEdge(1, 2);
     graph.addEdge(1, 3);
 
+    expect(graph.verticies.getAt(0).listOfConnections.getAt(1)).toEqual(2);
     graph.removeEdge(0, 2);
+    expect(graph.verticies.getAt(0).listOfConnections.getAt(1)).toEqual(undefined);
+  });
+
+  it("has method removeVertex removes vertex from graph", () => {
+    graph.addVertex(new Wire());
+    graph.addVertex(new Battery());
+    graph.addVertex(new Lever());
+
+    graph.addEdge(0, 1);
+    graph.addEdge(0, 2);
+    graph.addEdge(2, 0);
+    graph.addEdge(1, 2);
+    graph.addEdge(1, 3);
+
+    expect(graph.verticies.getAt(0).component).toBeInstanceOf(Wire);
+    expect(graph.verticies.getAt(0).listOfConnections.getAt(0)).toEqual(1);
+    expect(graph.verticies.getAt(0).listOfConnections.getAt(1)).toEqual(2);
+    expect(graph.verticies.getAt(2).listOfConnections.getAt(0)).toEqual(0);
+
+    graph.removeVertex(0);
+
+    expect(graph.verticies.getAt(0).component).toBeInstanceOf(Battery);
+    expect(graph.verticies.getAt(1).listOfConnections.getAt(0)).toEqual(undefined);
   });
 });

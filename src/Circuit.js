@@ -1,18 +1,22 @@
 const { Wire } = require("./Wire");
 const { Lever } = require("./Lever");
 const { Battery } = require("./Battery");
-const { Connection } = require("./Connection");
-const { Connector } = require("./Connector");
+const { Graph } = require("./Graph");
 
 class Circuit {
   constructor() {
-    this.components = 0;
+    this.circuit = new Graph();
   }
 
-  initialiseCircuit(num = this.circuitSize) {
-    // initialising default battery in circuit
-    this.components["battery"] = new Battery();
-  }
+  // select component
+
+  // add component
+
+  // remove component
+
+  // turn on circuit (physics simulation)
+
+  // turn off circuit
 }
 
 // exporting circuit class

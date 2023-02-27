@@ -38,18 +38,28 @@ class Graph {
   }
 
   // remove vertex
+  removeVertex(vertex) {
+    // loops through each vertex
+    for (let i = 0; i < this.length; i++) {
+        // removes edges where target vertex is present
+        if (this.verticies.getAt(i).listOfConnections.search(vertex) != undefined) {
+            this.verticies.getAt(i).listOfConnections.remove(vertex);
+          }
+    }
+
+    // now all edges of target vertex gone now remove vertex from verticies
+    this.verticies.remove(this.verticies.getAt(vertex));
+  }
 
   // remove edge
   removeEdge(vertex1, vertex2) {
     // check if edge exists
-    console.log(this.verticies.getAt(vertex1).listOfConnections.getAt(vertex2 - 1));
-    console.log("fail")
-    if (this.verticies.getAt(vertex1).listOfConnections.getAt(vertex2)) {
-      console.log(
-        this.verticies.getAt(vertex1).listOfConnections.getAt(vertex2)
-      );
-      console.log("success");
+    if (!this.verticies.getAt(vertex1).listOfConnections.search(vertex2)) {
+      return;
     }
+
+    // remove vertex 2 from vertex1 adjacency list
+    this.verticies.getAt(vertex1).listOfConnections.remove(vertex2);
   }
 
   // print graph
