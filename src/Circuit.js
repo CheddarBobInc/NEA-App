@@ -17,6 +17,8 @@ class Circuit {
   // turn on circuit (physics simulation)
 
   // turn off circuit
+
+  // loop detection
 }
 
 // exporting circuit class
