@@ -1,6 +1,5 @@
 // import necessary files
 const { Battery } = require("../src/Battery");
-const { Connection } = require("../src/Connection");
 const {
   DEFAULT_CURRENT,
   DEFAULT_RESISTANCE,

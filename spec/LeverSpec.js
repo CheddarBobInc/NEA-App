@@ -1,6 +1,5 @@
 // import necessary files
 const { Lever } = require("../src/Lever");
-const { Connection } = require("../src/Connection");
 const {
   DEFAULT_CURRENT,
   DEFAULT_RESISTANCE,

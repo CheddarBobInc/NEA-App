@@ -4,7 +4,6 @@ const {
   DEFAULT_RESISTANCE,
   DEFAULT_POTENTIALDIFFERENCE,
 } = require("./properties");
-const { Connection } = require("../src/Connection");
 
 class Wire {
   constructor(

@@ -1,6 +1,5 @@
 // import necessary files
 const { Wire } = require("../src/Wire");
-const { Connection } = require("../src/Connection");
 const {
   DEFAULT_CURRENT,
   DEFAULT_RESISTANCE,
