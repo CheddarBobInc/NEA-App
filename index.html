@@ -4,9 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .box {
+        border: 3px solid #666;
+        background-color: #ddd;
+        border-radius: 0.5em;
+        padding: 10px;
+        cursor: move;
+      }
+    </style>
     <title>DC Circuit Builder</title>
   </head>
   <body>
     <div><h1>Circuit Builder</h1></div>
+    <div class="container">
+      <div draggable="true" class="box">A</div>
+      <div draggable="true" class="box">B</div>
+      <div draggable="true" class="box">C</div>
+    </div>
   </body>
 </html>

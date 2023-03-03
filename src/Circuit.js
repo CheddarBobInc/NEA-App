@@ -9,7 +9,9 @@ class Circuit {
   }
 
   // select component
-
+  this.circuit.addVertex(Wire);
+  this.circuit.addVertex(Wire);
+  this.circuit.addEdge(1, 2);
   // add component
 
   // remove component

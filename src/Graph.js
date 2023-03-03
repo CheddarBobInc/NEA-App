@@ -41,10 +41,12 @@ class Graph {
   removeVertex(vertex) {
     // loops through each vertex
     for (let i = 0; i < this.length; i++) {
-        // removes edges where target vertex is present
-        if (this.verticies.getAt(i).listOfConnections.search(vertex) != undefined) {
-            this.verticies.getAt(i).listOfConnections.remove(vertex);
-          }
+      // removes edges where target vertex is present
+      if (
+        this.verticies.getAt(i).listOfConnections.search(vertex) != undefined
+      ) {
+        this.verticies.getAt(i).listOfConnections.remove(vertex);
+      }
     }
 
     // now all edges of target vertex gone now remove vertex from verticies
