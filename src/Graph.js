@@ -64,6 +64,9 @@ class Graph {
     this.verticies.getAt(vertex1).listOfConnections.remove(vertex2);
   }
 
+  // get vertex
+  getVertex(index)
+
   // print graph
   print() {
     for (let i = 0; i < this.length; i++) {

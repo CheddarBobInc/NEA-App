@@ -2,17 +2,20 @@ const { Wire } = require("./Wire");
 const { Lever } = require("./Lever");
 const { Battery } = require("./Battery");
 const { Graph } = require("./Graph");
+const { Component } = require("./Component");
 
 class Circuit {
   constructor() {
-    this.circuit = new Graph();
+    circuit = new Graph();
+    x = [];
+    y = [];
   }
 
   // select component
-  this.circuit.addVertex(Wire);
-  this.circuit.addVertex(Wire);
-  this.circuit.addEdge(1, 2);
+
   // add component
+
+  // coordinate connection
 
   // remove component
 
@@ -21,6 +24,11 @@ class Circuit {
   // turn off circuit
 
   // loop detection
+  isLoop() {
+    const visited = new Set();
+    const onPath = new Set();
+  }
+
 }
 
 // exporting circuit class
