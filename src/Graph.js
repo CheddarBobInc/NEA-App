@@ -3,7 +3,7 @@ const { Component } = require("./Component");
 
 class Graph {
   constructor() {
-    this.verticies = new LinkedList();
+    this.vertices = new LinkedList();
     this.length = 0;
   }
 
@@ -14,27 +14,27 @@ class Graph {
     let index = this.length;
     while (!freeIndex) {
       for (let i; i < this.length; i++) {
-        if (this.length == this.verticies.getAt(i).index) {
+        if (this.length == this.vertices.getAt(i).index) {
           freeIndex = false;
         }
       }
       index++;
     }
-    this.verticies.insertLast(new Component(index, vertex));
+    this.vertices.insertLast(new Component(index, vertex));
     this.length++;
   }
 
   // add edge
   addEdge(vertex1, vertex2) {
     // check that vertcies exist
-    if (!this.verticies.getAt(vertex1)) {
+    if (!this.vertices.getAt(vertex1)) {
       return;
     }
-    if (!this.verticies.getAt(vertex2)) {
+    if (!this.vertices.getAt(vertex2)) {
       return;
     }
 
-    this.verticies.getAt(vertex1).listOfConnections.insertLast(vertex2);
+    this.vertices.getAt(vertex1).listOfConnections.insertLast(vertex2);
   }
 
   // remove vertex
@@ -43,25 +43,25 @@ class Graph {
     for (let i = 0; i < this.length; i++) {
       // removes edges where target vertex is present
       if (
-        this.verticies.getAt(i).listOfConnections.search(vertex) != undefined
+        this.vertices.getAt(i).listOfConnections.search(vertex) != undefined
       ) {
-        this.verticies.getAt(i).listOfConnections.remove(vertex);
+        this.vertices.getAt(i).listOfConnections.remove(vertex);
       }
     }
 
-    // now all edges of target vertex gone now remove vertex from verticies
-    this.verticies.remove(this.verticies.getAt(vertex));
+    // now all edges of target vertex gone now remove vertex from vertices
+    this.vertices.remove(this.vertices.getAt(vertex));
   }
 
   // remove edge
   removeEdge(vertex1, vertex2) {
     // check if edge exists
-    if (!this.verticies.getAt(vertex1).listOfConnections.search(vertex2)) {
+    if (!this.vertices.getAt(vertex1).listOfConnections.search(vertex2)) {
       return;
     }
 
     // remove vertex 2 from vertex1 adjacency list
-    this.verticies.getAt(vertex1).listOfConnections.remove(vertex2);
+    this.vertices.getAt(vertex1).listOfConnections.remove(vertex2);
   }
 
   // get vertex
@@ -70,7 +70,7 @@ class Graph {
   // print graph
   print() {
     for (let i = 0; i < this.length; i++) {
-      console.log(this.verticies.getAt(i));
+      console.log(this.vertices.getAt(i));
     }
   }
 }
