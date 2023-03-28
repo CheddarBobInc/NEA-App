@@ -14,7 +14,7 @@ class Graph {
     let index = this.length;
     while (!freeIndex) {
       for (let i; i < this.length; i++) {
-        if (this.length == this.vertices.getAt(i).index) {
+        if (index == this.vertices.getAt(i).index) {
           freeIndex = false;
         }
       }
@@ -63,9 +63,6 @@ class Graph {
     // remove vertex 2 from vertex1 adjacency list
     this.vertices.getAt(vertex1).listOfConnections.remove(vertex2);
   }
-
-  // get vertex
-  getVertex(index)
 
   // print graph
   print() {

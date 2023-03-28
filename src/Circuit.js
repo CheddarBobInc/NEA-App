@@ -1,14 +1,10 @@
-const { Wire } = require("./Wire");
-const { Lever } = require("./Lever");
-const { Battery } = require("./Battery");
 const { Graph } = require("./Graph");
-const { Component } = require("./Component");
 
 class Circuit {
   constructor() {
-    circuit = new Graph();
-    x = [];
-    y = [];
+    this.graph = new Graph();
+    this.x = [];
+    this.y = [];
   }
 
   // select component
@@ -24,9 +20,44 @@ class Circuit {
   // turn off circuit
 
   // loop detection
-  isLoop() {
+  hasLoop() {
     const visited = new Set();
     const onPath = new Set();
+
+    // parsing vertex == vertexs index not component object
+    function depthFirstSearch(vertex, graph) {
+      visited.add(vertex);
+      onPath.add(vertex);
+      graph = graph;
+
+      for (let i = 0; i < graph.length; i++) {
+        let neighbour = graph.vertices.getAt(i).index;
+
+        if (onPath.has(neighbour)) {
+          // a cycle has been found
+          return true;
+        }
+
+        if (!(visited.has(neighbour)) && depthFirstSearch(neighbour)) {
+          // a cycle has been found
+          return true;
+        }
+      }
+
+      onPath.delete(vertex);
+      return false;
+    }
+
+    for (let i = 0; i < this.graph.length; i++) {
+      let vertex = this.graph.vertices.getAt(i).index;
+      if (!(visited.has(vertex)) && depthFirstSearch(vertex, this.graph)) {
+        // a cycle has been found
+        return true;
+      }
+    }
+
+    // no cycle has been found
+    return false;
   }
 
 }
